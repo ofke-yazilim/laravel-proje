@@ -45,9 +45,13 @@ Not : Benim httpd.conf  dizinimin dosya yolu : <br><strong> C:\wamp64\bin\apache
             <li>Oluşan migration dosyasına girilerek oluşturulmak istenen tablo özellikleri ayarlanır.</li>
             <li>Migration iki adet fonksiyon taşır. up fonksiyonu tablo oluştururken down oluşan tabloyu kaldırır. up fonksiyonu içerisine tabloya ait sütun özellikleri belirtilir.<br>
                 Örnek(Tablo oluşturma): https://github.com/ofke-yazilim/laravel-proje/blob/master/database/migrations/2017_12_08_130246_usertable.php<br>
-                Örnek(Oluşturulmuş Tablo Güncelle) : Örnek(Tablo oluşturma): https://github.com/ofke-yazilim/laravel-proje/blob/master/database/migrations/2017_12_08_143444_userupdate.php
+                Örnek(Oluşturulmuş Tablo Güncelle) : Örnek(Tablo oluşturma): https://github.com/ofke-yazilim/laravel-proje/blob/master/database/migrations/2017_12_08_152201_user_add_colums.php
             </li>
             <li>Tablo özellikleri belirtildikten sonra <strong>php artisan migrate</strong> kodu çalıştırılır ve özellikleri belirtilen tablo veritabanına oluşturulur.</li>
+            <li>Daha önce tanımlamış olduğumuz migration üzerinde güncelleme yapmak için <strong>php artisan make:migration user_add_colums --table:user</strong> kodunu çalıştırmamız yeterli
+                bu kod user tablosunda güncelleme işlemi yapacağımız yeni bir migration oluşturur bu migration dosyası açılıp düzenlemeler yapıldıktan sonra 
+                <strong>php artisan migrate</strong> komutu ile yapılan değişiklikler database üzerine aktarılır.<br>
+                Örnek(Oluşturulmuş Tablo Güncelle) : Örnek(Tablo oluşturma): https://github.com/ofke-yazilim/laravel-proje/blob/master/database/migrations/2017_12_08_152201_user_add_colums.php</li>
             <li>Migration ile ilgili ayrıntılı bilgi için bakınız: https://laravel.com/docs/5.5/migrations</li>
         </ul>
     </li>
