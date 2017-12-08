@@ -25,13 +25,13 @@ Not : Benim httpd.conf  dizinimin dosya yolu : <br><strong> C:\wamp64\bin\apache
  </li>
 <li>Daha sonra <strong>C:\wamp64\bin\apache\apache2.4.23\conf\extra</strong>  dizini içerisinde bulunan <strong>httpd-vhosts.conf </strong> dosyası açılarak sanal sunucu yönlendirmeleri yapılır . Örneğin ben laravel projemin http://laravel.localhost/ şeklinde açılmasını istiyorsam aşağıda bulunan kodları dosyanın en altına eklerim .<br>
 <VirtualHost *:80><br>
-	&nbspServerName laravelproje.localhost<br>
-	&nbspDocumentRoot c:/wamp64/www/laravel/laravelproje/public <br>
-	&nbsp<Directory  "c:/wamp64/www/laravel/laravelproje"><br>
-		&nbsp&nbspOptions +Indexes +Includes +FollowSymLinks +MultiViews<br>
-		&nbsp&nbspAllowOverride All<br>
-		&nbsp&nbspRequire local<br>
-	&nbsp</Directory><br>
+	ServerName laravelproje.localhost<br>
+	DocumentRoot c:/wamp64/www/laravel/laravelproje/public <br>
+	<Directory "c:/wamp64/www/laravel/laravelproje"><br>
+		Options +Indexes +Includes +FollowSymLinks +MultiViews<br>
+		AllowOverride All<br>
+		Require local<br>
+	</Directory><br>
 </VirtualHost>
 <br>
 Not : Yukarıda bulunan 80 portu wamp kurulunca default gelir eğer port değişirse uygun port buraya yazılır. Yukarıda yazmış olduğumuz uzantılar laravel projemizin bulunduğu dizin yollarıdır. Sonuna koymuş olduğumuz public ise laravel projemizin çalışmasını sağlayan index dosyasını içerdiği için eklenir yani laravel projelerinin başlangıç çalışımı public dizini üzerinden gerçekleşir.
