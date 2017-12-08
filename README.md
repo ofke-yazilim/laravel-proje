@@ -23,19 +23,8 @@ Kodunu çalıştırıyorum bir süre sonra laravel kurulumum tamamlanıyor.
 <li>Wamp server ile kurulu olarak gelen apache dizini içerisinde bulunan <strong>httpd.conf</strong> dosyası açılarak  <strong>Include conf/extra/httpd-vhosts.conf </strong> yazısı bulunur ve aktif edilir.<br>
 Not : Benim httpd.conf  dizinimin dosya yolu : <br><strong> C:\wamp64\bin\apache\apache2.4.23\conf \ httpd.conf  </strong>
  </li>
-<li>Daha sonra <strong>C:\wamp64\bin\apache\apache2.4.23\conf\extra</strong>  dizini içerisinde bulunan <strong>httpd-vhosts.conf </strong> dosyası açılarak sanal sunucu yönlendirmeleri yapılır . Örneğin ben laravel projemin http://laravel.localhost/ şeklinde açılmasını istiyorsam aşağıda bulunan kodları dosyanın en altına eklerim .<br>
-<VirtualHost *:80><br>
-	ServerName laravelproje.localhost<br>
-	DocumentRoot c:/wamp64/www/laravel/laravelproje/public <br>
-	<Directory "c:/wamp64/www/laravel/laravelproje"><br>
-		Options +Indexes +Includes +FollowSymLinks +MultiViews<br>
-		AllowOverride All<br>
-		Require local<br>
-	</Directory><br>
-</VirtualHost>
-<br>
-Not : Yukarıda bulunan 80 portu wamp kurulunca default gelir eğer port değişirse uygun port buraya yazılır. Yukarıda yazmış olduğumuz uzantılar laravel projemizin bulunduğu dizin yollarıdır. Sonuna koymuş olduğumuz public ise laravel projemizin çalışmasını sağlayan index dosyasını içerdiği için eklenir yani laravel projelerinin başlangıç çalışımı public dizini üzerinden gerçekleşir.
- </li>
+<li>Daha sonra <strong>C:\wamp64\bin\apache\apache2.4.23\conf\extra</strong>  dizini içerisinde bulunan <strong>httpd-vhosts.conf </strong> dosyası açılarak sanal sunucu yönlendirmeleri yapılır . Örneğin ben laravel projemin http://laravel.localhost/ şeklinde açılmasını istiyorsam https://github.com/ofke-yazilim/laravel-proje/blob/master/httpd-vhost.conf dosyasında bulunan kodları httpd-vhosts.conf   dosyasının en altına eklerim .<br><br>
+</li>
 </ul>
  </li>
 <li>Yukarıdaki işlemlerden sonra wamp server restart edilir ve  browser açılarak http://laravel.localhost/  adresine gidilerek projenin çalıştığı görülür.</li>
