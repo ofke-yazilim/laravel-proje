@@ -1,7 +1,7 @@
 # laravel-proje
-Laravel 5.6 Wamp Server
 
-<h1>LARAVEL KURULUMU VE WİNDOWS SANAL SUNUCU OLUŞTURULMASI</h1>
+Laravel 5.6 Wamp Server
+<h1>1 - LARAVEL KURULUMU VE WİNDOWS SANAL SUNUCU OLUŞTURULMASI</h1>
 <ul>
 <li>Windows üzerine  http://www.wampserver.com/en/# adresinden wamp  server indirip kuruyoruz.</li>
 <li>Wamp server kurulumu bittikten sonra <strong>C://wamp64/www </strong> dizini  içerisinde laravel adında  bir klasör oluşturuyoruz. </li>
@@ -23,15 +23,15 @@ Kodunu çalıştırıyorum bir süre sonra laravel kurulumum tamamlanıyor.
 <li>Wamp server ile kurulu olarak gelen apache dizini içerisinde bulunan <strong>httpd.conf</strong> dosyası açılarak  <strong>Include conf/extra/httpd-vhosts.conf </strong> yazısı bulunur ve aktif edilir.<br>
 Not : Benim httpd.conf  dizinimin dosya yolu : <br><strong> C:\wamp64\bin\apache\apache2.4.23\conf \ httpd.conf  </strong>
  </li>
-<li>Daha sonra C:\wamp64\bin\apache\apache2.4.23\conf\extra  dizini içerisinde bulunan httpd-vhosts.conf dosyası açılarak sanal sunucu yönlendirmeleri yapılır . Örneğin ben laravel projemin http://laravel.localhost/ şeklinde açılmasını istiyorsam aşağıda bulunan kodları dosyanın en altına eklerim .<br>
-<VirtualHost *:80>
-	ServerName laravelproje.localhost
-	DocumentRoot c:/wamp64/www/laravel/laravelproje/public
-	<Directory  "c:/wamp64/www/laravel/laravelproje">
-		Options +Indexes +Includes +FollowSymLinks +MultiViews
-		AllowOverride All
-		Require local
-	</Directory>
+<li>Daha sonra <strong>C:\wamp64\bin\apache\apache2.4.23\conf\extra</strong>  dizini içerisinde bulunan <strong>httpd-vhosts.conf </strong> dosyası açılarak sanal sunucu yönlendirmeleri yapılır . Örneğin ben laravel projemin http://laravel.localhost/ şeklinde açılmasını istiyorsam aşağıda bulunan kodları dosyanın en altına eklerim .<br>
+<VirtualHost *:80><br>
+	&nbspServerName laravelproje.localhost<br>
+	&nbspDocumentRoot c:/wamp64/www/laravel/laravelproje/public <br>
+	&nbsp<Directory  "c:/wamp64/www/laravel/laravelproje"><br>
+		&nbsp&nbspOptions +Indexes +Includes +FollowSymLinks +MultiViews<br>
+		&nbsp&nbspAllowOverride All<br>
+		&nbsp&nbspRequire local<br>
+	&nbsp</Directory><br>
 </VirtualHost>
 <br>
 Not : Yukarıda bulunan 80 portu wamp kurulunca default gelir eğer port değişirse uygun port buraya yazılır. Yukarıda yazmış olduğumuz uzantılar laravel projemizin bulunduğu dizin yollarıdır. Sonuna koymuş olduğumuz public ise laravel projemizin çalışmasını sağlayan index dosyasını içerdiği için eklenir yani laravel projelerinin başlangıç çalışımı public dizini üzerinden gerçekleşir.
