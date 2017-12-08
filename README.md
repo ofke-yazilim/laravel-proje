@@ -36,7 +36,7 @@ Not : Benim httpd.conf  dizinimin dosya yolu : <br><strong> C:\wamp64\bin\apache
 <ul>
     <li>Öncelikle projemiz içerisinde kullanacağımız veritabanı bilgilerini .env dosyasına belirtiyoruz. .env dosyası direk ana dizin içerisinde bulunur.</li>
     <li>
-    <span>Migration kullanılarak database içerisinde tablolar oluştururuz. Migration dizini : /database/migrationS</span>
+    <span>Migration kullanılarak database içerisinde tablolar oluştururuz. Migration dizini dosya yolu: /database/migrations</span>
         <ul> 
             <li>Migration class dosyası terminal ekranına kodu <strong>php artisan make:migrate usertable</strong> yazılarak oluşturulur. Usertable adında bir class oluşturduk.</li>
             <li>Oluşan migration dosyasına girilerek oluşturulmak istenen tablo özellikleri ayarlanır.</li>
