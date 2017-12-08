@@ -10,6 +10,7 @@ Admin Anasayfa
 <span>Gönderilen İsim : {{$name}}</span>
 
 <!-- Gönderilen tek boyutlu array ekrana yazılıyor-->
+@if(count($array1)>0)
 <table>
     <tr>
         @foreach($array1 as $value)
@@ -17,6 +18,7 @@ Admin Anasayfa
         @endforeach
     </tr>
 </table>
+@endif
 
 <!-- Gönderilen iki boyutlu array ekrana yazılıyor-->
 <table>
