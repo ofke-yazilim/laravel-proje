@@ -20,6 +20,7 @@ class Usertable extends Migration
             $table->string('password');//password adında varchar değer oluşturur
             $table->string('email')->unique();//email adında varchar değer oluşturur. Bu değer tekildir iki kez aynı mail adresi ile veri eklenemez
             $table->integer('age');//age adında int değer oluşturur.
+            $table->text('aboutuser');//aboutuser adında text veri oluşturur 
             $table->boolean('status');//status adında boolen değer oluşturur
             $table->dateTime('birthday');//Datatime tipinde değer oluşturur
             $table->dateTime('jobstartdate');//datatime tipinde değer oluşturur
