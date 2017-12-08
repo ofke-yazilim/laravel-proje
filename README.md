@@ -29,3 +29,22 @@ Not : Benim httpd.conf  dizinimin dosya yolu : <br><strong> C:\wamp64\bin\apache
  </li>
 <li>Yukarıdaki işlemlerden sonra wamp server restart edilir ve  browser açılarak http://laravel.localhost/  adresine gidilerek projenin çalıştığı görülür.</li>
 </ul>
+<br>
+<h1>2 - LARAVEL KULLANIM AŞAMALARI</h1>
+<br>
+<h2>2.1 Migration Kullanımı</h2>
+<ul>
+    <li>Öncelikle projemiz içerisinde kullanacağımız veritabanı bilgilerini .env dosyasına belirtiyoruz. .env dosyası direk ana dizin içerisinde bulunur.</li>
+    <li>
+    <span>Migration kullanılarak database içerisinde tablolar oluştururuz. Migration dizini : /database/migrationS</span>
+        <ul> 
+            <li>Migration class dosyası terminal ekranına kodu <strong>php artisan make:migrate usertable</strong> yazılarak oluşturulur. Usertable adında bir class oluşturduk.</li>
+            <li>Oluşan migration dosyasına girilerek oluşturulmak istenen tablo özellikleri ayarlanır.</li>
+            <li>Migration iki adet fonksiyon taşır. up fonksiyonu tablo oluştururken down oluşan tabloyu kaldırır. up fonksiyonu içerisine tabloya ait sütun özellikleri belirtilir.<br>
+                Örnek : https://github.com/ofke-yazilim/laravel-proje/blob/master/database/migrations/2017_12_08_130246_usertable.php
+            </li>
+            <li>Tablo özellikleri belirtildikten sonra <strong>php artisan migrate</strong> kodu çalıştırılır ve özellikleri belirtilen tablo veritabanına oluşturulur.</li>
+            <li>Migration ile ilgili ayrıntılı bilgi için bakınız: https://laravel.com/docs/5.5/migrations</li>
+        </ul>
+    </li>
+</ul>
