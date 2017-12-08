@@ -17,7 +17,7 @@ class Userupdate extends Migration
         Schema::table('user',function(Blueprint $table) {
             $table->string('password');//password adında varchar değer oluşturur
             $table->text('aboutuser');//aboutuser adında text veri oluşturur 
-            $table->string('email')->unique()->nullable();//email adında varchar değer oluşturur. Bu değer tekildir iki kez aynı mail adresi ile veri eklenemez
+            $table->string('email')->unique()->nullable();//email adında varchar değer oluşturur. Bu değer tekildir iki kez aynı mail adresi ile veri eklenemez.Ayrıca null değeri alabilir.
         });
     }
 
