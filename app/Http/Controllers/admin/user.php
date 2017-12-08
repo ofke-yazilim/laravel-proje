@@ -90,7 +90,10 @@ class user extends Controller
         //Compact çok sayıda veri göndermemizi sağlar
         //Sadece bir değer gönderirkende kullanılır
         $name = "omer faruk kesmez";
-        return view("home",compact('title','name'));
+        //Tek boyutlu Array gönderelim 
+        $array1 = array("ömer","faruk","kesmez");
+        $array2 = array(0=>"ömer",2=>"faruk",3=>"kesmez");
+        return view("admin.home",compact('title','name','array1','array2'));//resources/admin/home.blade.php çağrılıyor
 
         //Sadece bir değer gönderdiğimiz zaman
         //return view("home")->with('title',$title);
