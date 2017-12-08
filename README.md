@@ -39,9 +39,13 @@ Not : Benim httpd.conf  dizinimin dosya yolu : <br><strong> C:\wamp64\bin\apache
     <span>Migration kullanılarak database içerisinde tablolar oluştururuz. Migration dizini dosya yolu: /database/migrations</span>
         <ul> 
             <li>Migration class dosyası terminal ekranına kodu <strong>php artisan make:migrate usertable</strong> yazılarak oluşturulur. Usertable adında bir class oluşturduk.</li>
+            <li>Yukarıdakinden farklı olarak  <strong>php artisan make:migrate usertable --create:user</strong> yazılarakda migration oluşturulur.
+                Burada up ve down fonksiyonları dolu gelir bu kodla migration
+                oluşturmak daha mantıklıdır.</li>
             <li>Oluşan migration dosyasına girilerek oluşturulmak istenen tablo özellikleri ayarlanır.</li>
             <li>Migration iki adet fonksiyon taşır. up fonksiyonu tablo oluştururken down oluşan tabloyu kaldırır. up fonksiyonu içerisine tabloya ait sütun özellikleri belirtilir.<br>
-                Örnek : https://github.com/ofke-yazilim/laravel-proje/blob/master/database/migrations/2017_12_08_130246_usertable.php
+                Örnek(Tablo oluşturma): https://github.com/ofke-yazilim/laravel-proje/blob/master/database/migrations/2017_12_08_130246_usertable.php<br>
+                Örnek(Oluşturulmuş Tablo Güncelle) : Örnek(Tablo oluşturma): https://github.com/ofke-yazilim/laravel-proje/blob/master/database/migrations/2017_12_08_143444_userupdate.php
             </li>
             <li>Tablo özellikleri belirtildikten sonra <strong>php artisan migrate</strong> kodu çalıştırılır ve özellikleri belirtilen tablo veritabanına oluşturulur.</li>
             <li>Migration ile ilgili ayrıntılı bilgi için bakınız: https://laravel.com/docs/5.5/migrations</li>
