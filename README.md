@@ -84,7 +84,6 @@ sayfasını açınız.</em>
         <span>Route üzerinden controller dosyasına yönlendirme örneği için 52. satırı inceleyebilirsiniz.</span>
         <ul>
             <h3>2.2.1 Controller İşlemleri</h3>
-            <br>
             <em>Controller dosyaları Model ve view yapıları arasında köprü görevi gören dosyalarımızdır.</em>
             <li>Laravel üzerinde controller dosyları <strong>/app/Http/Controllers</strong> içerisinde bulunur.</li>
             <li>Yeni bir controller oluşturulurken iki yöntem vardır 1.yöntem <strong>php artisan make:controller newcontroller</strong>
