@@ -62,7 +62,9 @@ Not : Benim httpd.conf  dizinimin dosya yolu : <br><strong> C:\wamp64\bin\apache
 routes/web.php üzerinde yapılmaktadır.Routes isteklerin bir controller dosyasına ya da view dosyasına yönelmesini sağlar ya da yönlendirme 
 yapmadan işlemlerinizi direk bu kısımda yapablirsiniz. Ayrıntılı kullanım örneklerini : https://github.com/ofke-yazilim/laravel-proje/blob/master/routes/web.php
 adresinden inceleyebilirsiniz. </span>
-
+<br>
+<em>Aşağıda Bahseiden Satır numaralarını incelemek için <strong>https://github.com/ofke-yazilim/laravel-proje/blob/master/routes/web.php</strong>
+sayfasını açınız.</em>
 <ul>
     <li>Route üzerinde direk view ekranına yönlendirme yapabiliriz.Benim projem içerisinde routes/web.php 15. satırda örnek görebilirsiniz.</li>
     <li>İşlemleri direk olarak route üzerinde yapabiliriz. Örneğin ekrana bir string yazdırabiliriz.Örnek için 21. satır inceleyebilirsiniz.</li>
