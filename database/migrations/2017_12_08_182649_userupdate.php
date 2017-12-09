@@ -15,7 +15,7 @@ class Userupdate extends Migration
     {
         Schema::table('user', function (Blueprint $table) {
             //user tablosuna yeni bir sütun ekliyorum
-            $table->string('sehir');
+            $table->string('sehir')->nullable();
         });
     }
 
