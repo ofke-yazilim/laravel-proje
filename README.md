@@ -85,6 +85,8 @@ sayfasını açınız.</em>
         <ul>
             <h3>2.2.1 Controller İşlemleri</h3>
             <span>Controller İşlemleri</span>
+            <br>
+            <p>Controller dosyaları Model ve view yapıları arasında köprü görevi gören dosyalarımızdır.</p>
             <li>Laravel üzerinde controller dosyları <strong>/app/Http/Controllers</strong> içerisinde bulunur.</li>
             <li>Yeni bir controller oluşturulurken iki yöntem vardır 1.yöntem <strong>php artisan make:controller newcontroller</strong>
                 Bu yöntem ile newcontroller.php adında bir controller dosyamız oluşur. Bu dosya içerisinde class hazır gelir fakat
