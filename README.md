@@ -118,3 +118,13 @@ sayfasını açınız.</em>
         ziyaret edin.
     </li>
 </ul>
+
+<h2>2.3 Collection Kullanımı</h2>
+<span>Collectionlar Laravel içerisinde bulunan ve dizileri kullanmayı daha kullanışlı bir hale sokan methodları içeren bir sınıftır.
+      Bu sınıfı kullanarak array verilerimizi collectionlara çevirerek daha kolay işleyebileceğiz.
+</span>
+<ul>
+    <li>Collection için Controller dosyasında yapılan örneklere : https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Http/Controllers/newcontroller.php dosyasından inceleyebilirsiniz.</li>
+    <li>Collectionların view üzerinde kullanım örnekleri için : https://github.com/ofke-yazilim/laravel-proje/blob/master/resources/views/collection.blade.php dosyasına bakabilirsiniz.</li>
+    <li><em>Daha Ayrıntılı Öğrenmek için : https://laravel.com/docs/5.5/collections adresini ziyaret edin.</em></li>
+</ul>
