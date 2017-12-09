@@ -13,6 +13,7 @@
 
 //Route sayfaından controller çağırmadan direk view sayfasına ulaşmak
 Route::get('/', function () {
+    //resources/welcome.blade.php dosyasına gider.
     return view('welcome');
 });
 
@@ -127,6 +128,18 @@ Route::group(["namespace"=>"admin"],function(){
     Route::get('/yonetimpaneli/home/{title?}',["as"=>"yonetimpaneli.home","uses"=>"user@home",function($title="Başlık Girilmedi"){}]);
     //Hazır methodlar içeren controller yapısı oluşturdum bu sayede kolayca yönlendirmeleri yaptım.
     Route::resource('yonetimpaneli','user');
+});
+
+//Controller/admin/urunler.php controller dosyasına ulaşmak için
+Route::group(["namespace"=>"admin"],function(){
+    //Hazır methodlar içeren controller yapısı oluşturdum bu sayede kolayca yönlendirmeleri yaptım.
+    Route::resource('yonetimpaneli','urunler');
+});
+
+//Controller/kullanici/urunler.php controller dosyasına ulaşmak için
+Route::group(["namespace"=>"kullanici"],function(){
+    //Hazır methodlar içeren controller yapısı oluşturdum bu sayede kolayca yönlendirmeleri yaptım.
+    Route::resource('kullanici','urunler');
 });
 
 ###############  YUKARIDA ROUTE KULLANIM ÖRNEKLERİ BULUNMAKTADIR #######################
