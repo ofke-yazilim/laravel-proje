@@ -29,7 +29,7 @@ class newcontroller extends Controller
         $result = $collection->avg();
         
         //Collection üzerine veri eklemek için içerisine 10 ve 11 değerlerini ekledim.
-        $collection = $collection->concat([10])->concat(['name' => 11]);
+        $result = $collection->concat([10])->concat(['name' => 11]);
         
         //Collaction içerisinde verilen değeri arar.
         $result = $collection->contains('Desk');//false döner
@@ -51,7 +51,21 @@ class newcontroller extends Controller
                 echo $item;
             }
         });
+        $collection->all();
         
+        
+        //Her bir collection üzerinde işlem yapmaızı ve güüncelleme yapmamızı sağlar.
+        $collection->transform(function ($item) {
+            return $item * 2;
+        });
+        $collection->all();
+        
+        //Collection tekrar array yapmak
+        $result =  $collection->toArray();
+        
+        //Collection yapımızı json yapmak için
+        $result = $collection->toJson();
+
         #   
         #### TEK BOYUTLU COLLECTION SON#####
         
