@@ -87,6 +87,12 @@ Route::get('deneme/select/{id?}',function($id=null){
     //where kullanımlı select sorgusu status değer 1 olan kişilerin isimlerini getirir.
     $result = DB::table('user')->select('name')->where('status','=',1)->get();
     
+    //Birden fazla where sorgusu id dğri 1den büyük adı YUNUS olan kullanıcıları listeler.
+    $result = DB::table('user')->where([
+        ['id','>',1],
+        ['name','=',"YUNUS"]
+    ])->get();
+    
     if($id){
         //2 where , 1 orderby kullanımlı select sorgusu status değer 1 olan kişilerin isimlerini ve id değerlerini getirir.
         $result = DB::table('user')->select('id','name')->where('status','=',1)->where('id',"=",$id)->orderBy('id','desc')->get();
@@ -95,11 +101,33 @@ Route::get('deneme/select/{id?}',function($id=null){
         $result = DB::table('user')->select('id','name')->where('status','=',1)->orderBy('id','desc')->get();
     }
     
+    //Tablonunu toplam sütun sayısı öğreniliyor
+    $result = DB::table('user')->count();
+    
+    //wherein kullanımı id değeri 1 ve 2 olanları getirir.
+    $result = DB::table('user')->whereIn('id',[1,2])->get();
+    
+    //wherenotin kullanımı id değeri 1 ve 2'den farklı olanları getirir.
+    $result = DB::table('user')->whereNotIn('id',[1,2])->get();
+    
+    //wherenBetwen kullanımı id değeri 1 ve 2 arsında olanları getirir 1 ve 2 dahil.
+    $result = DB::table('user')->whereBetween('id',[1,2])->get();
+    
+    //whereNotBetween id değeri 1 ve 2 arasında olmaayan değerleri getirir. 1 ve 2 değerleride listelenmez.
+    $result = DB::table('user')->whereNotBetween('id',[1,2])->get();//
+    
+    //user tablosundan id değeri en büyük olan veriyi getirir.
+    $result = DB::table('user')->orderBy('id','desc')->first();
+    
+    //user bir adet kullanıcının ad ve soyadını dizi olarak getirir
+    //Select kullansaydık object olarak getirecekti.
+    $result = DB::table('user')->pluck('name','surname')->first();
+    
     //Select sonuçları ekrana baslıyor
     return dd($result);
     
     //Aşağıdaki şekildede listeleyebilirdik.
-    //return $result;
+//    return $result;
 });
 
 //id değeri gönderilen kullanıcı veritabanı üzerinden silinir.
