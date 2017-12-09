@@ -66,6 +66,7 @@ adresinden inceleyebilirsiniz. </span>
 <br>
 <em>Aşağıda Bahselilen Satır numaralarını incelemek için <strong>https://github.com/ofke-yazilim/laravel-proje/blob/master/routes/web.php</strong>
 sayfasını açınız.</em>
+<br>
 <ul>
     <li>Route üzerinde direk view ekranına yönlendirme yapabiliriz.Benim projem içerisinde routes/web.php 15. satırda örnek görebilirsiniz.</li>
     <li>İşlemleri direk olarak route üzerinde yapabiliriz. Örneğin ekrana bir string yazdırabiliriz.Örnek için 21. satır inceleyebilirsiniz.</li>
