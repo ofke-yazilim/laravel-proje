@@ -56,3 +56,56 @@ Not : Benim httpd.conf  dizinimin dosya yolu : <br><strong> C:\wamp64\bin\apache
         </ul>
     </li>
 </ul>
+
+<h2>2.2 Route ve Controller Kullanımı</h2>
+<span>Route Laravel üzerinde yönlendirme işlemlerini yaptığımız kısımdır. Laravel 5.6 üzerinde yönlendirme işlmeleri ana dizin içerisinde 
+routes/web.php üzerinde yapılmaktadır.Routes isteklerin bir controller dosyasına ya da view dosyasına yönelmesini sağlar ya da yönlendirme 
+yapmadan işlemlerinizi direk bu kısımda yapablirsiniz. Ayrıntılı kullanım örneklerini : https://github.com/ofke-yazilim/laravel-proje/blob/master/routes/web.php
+adresinden inceleyebilirsiniz. </span>
+
+<ul>
+    <li>Route üzerinde direk view ekranına yönlendirme yapabiliriz.Benim projem içerisinde routes/web.php 15. satırda örnek görebilirsiniz.</li>
+    <li>İşlemleri direk olarak route üzerinde yapabiliriz. Örneğin ekrana bir string yazdırabiliriz.Örnek için 21. satır inceleyebilirsiniz.</li>
+    <li>Url üzerinde herhangi bir parametre göndrerek işlem yapabilirsiniz. Örnek için 26. satır.</li>
+    <li>Url üzerinden parametre gönderme işlemlerinde eğer istenilen parametre gönderilmez ize hata verir örneğin 
+        diyelim ki http:\\laravel.localhost\urunler\1 şeklinde çalışan bir adresimiz olsun eğer biz bu adresi 
+        http:\\laravel.localhost\urunler\ şeklinde çalıştırır isek hata verir bu hatayı <strong>optional</strong> kullanral önleyebiliriz 
+        optional parametre boş olarak gelirse default olarak atanan bir değere göre işlem yapmamızı sağlar. Örnek için 31. ve 38. satırlar.
+    </li>
+    <li>Kullanılan route işlemine isim vermek için bakınız 45.satır. Route verilen isim sayfa içerisinde yani view yapıları içerisinde
+        tanımlamada kolaylık sağlar. Örneğin bir route işlemine "routeislem" adında tanımlar ise view içerisinde yönlendirme link adresine 
+        {{route('routeislem')}} yazılarak ulaşılabilir.</li>
+    <li>
+        <span>Route üzerinden controller dosyasına yönlendirme örneği için 52. satırı inceleyebilirsiniz.</span>
+        <ul>
+            <h3>2.2.1 Controller İşlemleri</h3>
+            <span>Controller İşlemleri</span>
+            <li>Laravel üzerinde controller dosyları <strong>/app/Http/Controllers</strong> içerisinde bulunur.</li>
+            <li>Yeni bir controller oluşturulurken iki yöntem vardır 1.yöntem <strong>php artisan make:controller newcontroller</strong>
+                Bu yöntem ile newcontroller.php adında bir controller dosyamız oluşur. Bu dosya içerisinde class hazır gelir fakat
+                fonksiyonları biz oluştururuz. Örneğin : https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Http/Controllers/newcontroller.php
+            </li>
+            <li>2. yöntem ise <strong>php artisan make:controller new2controller --resource</strong> şeklinde çalışan sistemdir.
+                Bu yöntemde index,store,create.. vb fonksiyonlar hazır olarak gelir.<br>
+                Örneğin https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Http/Controllers/new2controller.php dosyasını inceleyebilirsiniz.
+            </li>
+            <li>2.yöntem ile tanımlama yaparsak route yönlendirme işlemlerini çok kolaylaştırmış oluruz öreneğin yukarıda oluşturmuş olduğumuz 
+                new2controller adındaki controller dosyasına yönlendirme yaparken <strong>Route::resource('yonetimpaneli','new2controller');</strong>
+                yazarız bu sayede hazır olarak gelen tüm fonksiyonların yönlendirme linkleri oluşturulmuş olur. Örnek için 130.satır.
+            </li>
+        </ul>
+    </li>
+    <li>Route üzerinde namespace kullanımı :  Namespace şu nedenle gereklidir diyelimki urunler adında iki adet controller oluşturmak istiyoruz 
+        Bu controllerden biri kullanıcı arayüzü işlemleri için diğeri yönetim paneli işlemleri için kullanılmak isteniyor olsun fakat aynı klasör 
+        içinde urunler adında iki adet dosya oluşturulamaz bu sebeple namespace geliştirilmiştir yani iki farklı klasör oluşturulur ve bu klsörler 
+        içerisine urunler adında controller dosyası oluşturulur.Şimdi kullanıcı arayüz urunler için ve yönetim paneli ürünler için 
+        kullanılacak olan controller dosyalarını oluşturan kodları yazalım.<br>
+        <strong>php artisan make:controller admin/urunler --resource</strong><br>
+        <strong>php artisan make:controller kullanici/urunler --resource</strong><br>
+        Controller dosyalarımız oluştu şimdi bu controller dosyalarına route üzerinde nasıl yönlendirildiğini görmek için 33.satır- 43.satır arasını
+        inceleyebilirsiniz.
+    </li>  
+    <li>Uluşturulan route yönlendirmelerinin listesini ve link yapılarını görebilmek için <strong>php artisan controller:list</strong> 
+        kodu kullanılır.
+    </li>  
+</ul>
