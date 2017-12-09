@@ -130,7 +130,7 @@ Route::get('deneme/select/{id?}',function($id=null){
 //    return $result;
 });
 
-//Collection işlemleri yapabilmek newController içersinde bulunan collection methoduna yöneldik.
+//Collection işlemleri yapabilmek newController içerisinde bulunan collection methoduna yöneldik.
 Route::get('collection',['as'=>'collectionCollection','uses'=>'newController@collection']);
 
 //id değeri gönderilen kullanıcı veritabanı üzerinden silinir.
