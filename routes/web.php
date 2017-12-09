@@ -122,6 +122,7 @@ Route::get('deneme/update/{id}',function($id){
 
 ############################ SQL ÖRNEKLERİ SON ##################################
 
+//Yapılan namespace örneklerinin link bilgilerine ulaşmak için : php artisan controller:list
 //Controller/admin/user.php controller dosyasına ulaşmak için
 Route::group(["namespace"=>"admin"],function(){
     //Hazır olarak oluşturduğum controller yapıma home fonksiyonunu ekledim yönlendirmesini tanımlıyorum.
