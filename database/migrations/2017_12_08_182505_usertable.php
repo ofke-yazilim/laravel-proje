@@ -25,7 +25,7 @@ class Usertable extends Migration
             $table->dateTime('birthday')->nullable();//Datatime tipinde değer oluşturur
             $table->dateTime('jobstartdate')->nullable();//datatime tipinde değer oluşturur
             $table->rememberToken()->nullable();//remember_token adında varchar değerini taşıyan alan oluşturur.
-            $table->timestamps()->nullable();//created_at , updated_at adında iki adet timestamp türünde sütun oluşturur.
+            $table->timestamps();//created_at , updated_at adında iki adet timestamp türünde sütun oluşturur.
         });
     }
 
