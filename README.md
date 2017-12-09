@@ -113,4 +113,8 @@ sayfasını açınız.</em>
     <li>Uluşturulan route yönlendirmelerinin listesini ve link yapılarını görebilmek için <strong>php artisan controller:list</strong> 
         kodu kullanılır.
     </li>  
+    <li>Route dosyası içerisinde query bulder işlmeleri yapıldı örnek query builder kullanımları için.
+        66. satırdan itibaren inceleyebilirsiniz. Daha ayrıntılı bilgi için https://laravel.com/docs/5.5/queries adresini 
+        ziyaret edin.
+    </li>
 </ul>
