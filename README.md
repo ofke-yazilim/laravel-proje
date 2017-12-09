@@ -110,7 +110,7 @@ sayfasını açınız.</em>
         Controller dosyalarımız oluştu şimdi bu controller dosyalarına route üzerinde nasıl yönlendirildiğini görmek için 33.satır- 43.satır arasını
         inceleyebilirsiniz.
     </li>  
-    <li>Uluşturulan route yönlendirmelerinin listesini ve link yapılarını görebilmek için <strong>php artisan controller:list</strong> 
+    <li>Oluşturulan route yönlendirmelerinin listesini ve link yapılarını görebilmek için <strong>php artisan controller:list</strong> 
         kodu kullanılır.
     </li>  
     <li>Route dosyası içerisinde query bulder işlmeleri yapıldı örnek query builder kullanımları için.
