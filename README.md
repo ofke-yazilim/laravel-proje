@@ -128,3 +128,31 @@ sayfasını açınız.</em>
     <li>Collectionların view üzerinde kullanım örnekleri için : https://github.com/ofke-yazilim/laravel-proje/blob/master/resources/views/collection.blade.php dosyasına bakabilirsiniz.</li>
     <li><em>Daha Ayrıntılı Öğrenmek için : https://laravel.com/docs/5.5/collections adresini ziyaret edin.</em></li>
 </ul>
+
+<h2>2.4 Model ve ORM Yapıları</h2>
+<span>
+    ORM : Oluşturmuş olduğumuz nesnemiz ile veritabanı bağlantısından bağımsız olarak yapmış olduğumuz veritabanı işlemleridir.
+    ORM üzerinde bildiğimiz klasik sql sorguları yani select,update.. vb. bulunmamaktadır. Bu sayede ORM ile yapmış olduğumuz 
+    kodlama tüm veritabanı sistemlerinde geçerli olur. Laravel üerinde kullandığımız Model yapımız ise ORM ile yaptığımız işlermleri
+    kapsamaktadır.
+</span>
+<ul>
+<li>Model dosyamızı oluşturmak için <strong>php artisan make:model Kullanici</strong> yazarız bu sayede default olarak <strong>Kullanicis</strong>
+    tablosunda işlem yapacak olan Model dosyamız <strong>/app/Http/Kullanici.php</strong> şeklinde oluşur.</li>
+<li>Ayrıca Model dosyamızı oluşturuken aynı zamanda migration dosyamızıda oluşturan bir kod vardır.
+   <strong>php artisan make:kullanici -m</strong> bu kod sayesinde Model dosyamız <strong>/app/Http/Kullanici.php</strong> 
+   dosya youlunda oluşurken aynı zamanda bu Model dosyamızın işlem göreceği tablo olan <strong>Kullanicis</strong> tablosunun 
+   özelliklerini ve sütun isimlerini belirtebileceğimiz migration dosyamız ise <strong>/database/migrations/</strong> dizini 
+   altında oluşur. Bu durumda önce gidip migration dosyamızı kullanarak 2.1 başlığı altında anlattığım Migration Kullanım Aşamalarını
+   takip ederek database üzerine tablomuzu oluşturmalıyız. Dilersek default olarak gelen kullanicis tablosu ismini migration dosyamız içerisinden 
+   istediğimiz şekilde değiştirebiliriz. Eğer Tablo ismini değiştirdik ise ozaman Model dosyamız içerisinde bulunan class
+   içerisine yeni tablo ismimizi tanıtmalıyız bu tanıtımı ise <strong> protected $table = "kullanicilar";</strong> yazarak yapabiliriz.
+   Ben bu kodu yazarak Model dosyamın artık <strong>kullanicilar</strong> tablosunda işlem yapmasını istediğimi belirtiyorum.
+</li>
+<li>
+    <em>ORM Sorgu örneklerini https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Http/Controllers/newcontroller.php dosyasında index fonksiyonu 
+        içerisinde gerçekletirdim. Daha önce Route dosyam içerisinde 66. satırdan sonra query builder örnekleri yapmıştım bu 
+        örnekler içerisinde kullandığım methodlar ORM işlemleri için de geçerlidir.</em>
+    Örnek Query Builder Methodları : <strong>https://laravel.com/docs/5.5/queries</strong> için adresini ziyaret ediniz.
+</li>
+</ul>
