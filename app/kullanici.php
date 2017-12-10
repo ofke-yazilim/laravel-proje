@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class kullanici extends Model
 {
-    ################### Model Kullanım Örnekleri İçin Bakınız: newcontroller.php ####################
+    ################### Model Kullanım Örnekleri İçin Bakınız: newcontroller.php => index fonksiyonu ####################
     //Kullanacağım tablo ismini belirtiyorum.
     protected $table = "kullanicilar";
     
