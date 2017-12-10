@@ -130,8 +130,11 @@ Route::get('deneme/select/{id?}',function($id=null){
 //    return $result;
 });
 
-//Collection işlemleri yapabilmek newController içerisinde bulunan collection methoduna yöneldik.
+//Tek boyutlu array ile Collection işlemleri yapabilmek newController içerisinde bulunan collection methoduna yöneldik.
 Route::get('collection',['as'=>'collectionCollection','uses'=>'newController@collection']);
+
+//İki boyutlu array ile Collection işlemleri yapabilmek newController içerisinde bulunan collection2 methoduna yöneldik.
+Route::get('collection2',['as'=>'collectionCollection','uses'=>'newController@collection2']);
 
 //id değeri gönderilen kullanıcı veritabanı üzerinden silinir.
 Route::get('deneme/delete/{id}',function($id){
