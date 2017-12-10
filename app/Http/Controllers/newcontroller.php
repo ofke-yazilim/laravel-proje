@@ -22,6 +22,10 @@ class newcontroller extends Controller
         $kullanici->surname = "KESMEZ";
         $kullanici->email = "info@ofkeyazilim.com";
         $kullanici->save();
+        
+        //ORM Kullanrak insert işlemi2
+        //Bu yöntemi kullanacaksak model dosyamız içerisinde fillable yada guarded dizilerini tanılamalıyız.
+        kullanici::create(["name"=>"Halil İbrahim","surname"=>"KESMEZ"]); 
 
         //ORM Kullanarak Update İşlemi Örneği
         $kullanici = kullanici::find(1);
@@ -29,6 +33,12 @@ class newcontroller extends Controller
         $kullanici->surname = "KESMEZ";
         $kullanici->email = "ofke@ofkeyazilim.com";
         $kullanici->save();
+        
+        //ORM Update işlemi 2
+        kullanici::find(1)->update(['status'=>1]);
+        
+        //ORM Delete işlemleri
+        kullanici::where('id',">",5)->delete();
         
         //id değeri 1 olan kullanıcı verilerini döndürür
         $result = kullanici::find(1);
