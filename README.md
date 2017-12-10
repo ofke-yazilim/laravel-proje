@@ -152,7 +152,7 @@ sayfasını açınız.</em>
 <li>
     <em>ORM Sorgu örneklerini https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Http/Controllers/newcontroller.php dosyasında index fonksiyonu 
         içerisinde gerçekletirdim. Daha önce Route dosyam içerisinde 66. satırdan sonra query builder örnekleri yapmıştım bu 
-        örnekler içerisinde kullandığım methodlar ORM işlemleri için de geçerlidir.</em>
-    Örnek Query Builder Methodları : <strong>https://laravel.com/docs/5.5/queries</strong> için adresini ziyaret ediniz.
+        örnekler içerisinde kullandığım methodlar ORM işlemleri için de geçerlidir.</em><br>
+    Örnek Query Builder Methodları için : <strong>https://laravel.com/docs/5.5/queries</strong> adresini ziyaret ediniz.
 </li>
 </ul>
