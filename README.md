@@ -156,3 +156,27 @@ sayfasını açınız.</em>
     Örnek Query Builder Methodları için : <strong>https://laravel.com/docs/5.5/queries</strong> adresini ziyaret ediniz.
 </li>
 </ul>
+
+<h2>2.5 Eloquent: Relationships Kullanımı</h2>
+<strong>
+    <em>
+        Relationships : Sql sorgularında yapmış olduğumuz join işlemlerinin ORM üzerindeki karşılığıdır. Yani tablolar arası ilişkileri
+        temsil ederler.
+    </em>
+</strong>
+<h3>One To One Relationships</h3>
+<ul>
+    <li>Bu Relationships türünde iki tablo arasında bire bir ilişki kurmamızı sağlar.</li>
+    <li>
+        Örneğin bir image tablosu oluşturalım ve bu tablo üzerinde kullanıcılara ait resim bilgileri tutulsun.
+        Her kullanıcı için tek bir resim tutulabiliyor olsun işte bu durumda One To One kuralı geçerlidir.
+    </li>
+    <li>
+        Model dosaymız üzerindeki one to one işlemlerini : https://github.com/ofke-yazilim/laravel-proje/blob/master/app/kullanici.php <br>
+        https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Image.php dosyalarından inceleyebilirsiniz.
+    </li>
+    <li>
+        Controller dosyamız içerisindeki örnekler için https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Http/Controllers/newcontroller.php dosyasında
+        index methodu içerisinde 52. satırdan itibaren inceleyebilirsiniz.
+    </li>
+</ul>
