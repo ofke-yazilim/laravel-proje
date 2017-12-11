@@ -23,4 +23,10 @@ class kullanici extends Model
 //    protected $guarded = [
 //        'sehir'
 //    ];
+    
+    //One to One ilişki kuruyoruz 
+    //Kullanıcı tablosu ile ilişki kurduk.
+    protected function image(){
+        return $this->hasOne("App\Image", "kullanici_id" , "id");
+    }
 }
