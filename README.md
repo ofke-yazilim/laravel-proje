@@ -164,7 +164,7 @@ sayfasını açınız.</em>
         temsil ederler.
     </em>
 </strong>
-<h3>One To One Relationships</h3>
+<h3>2.5.1 One To One Relationships</h3>
 <ul>
     <li>Bu Relationships türünde iki tablo arasında bire bir ilişki kurmamızı sağlar.</li>
     <li>
