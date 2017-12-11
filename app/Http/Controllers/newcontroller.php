@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 //İşlem yapacağımız model dosyamız tanıtıldı
 use App\kullanici;
+use App\Image;
 
 class newcontroller extends Controller
 {
@@ -45,6 +46,15 @@ class newcontroller extends Controller
         
         //kullanici tablosundan id değeri 2 den büyük olanların içinde id değeri en büyük olan 1 değer döndürecek.
         $result = kullanici::where("id",">",2)->orderBy('id','desc')->first();
+        
+        //one to one örneği
+        //Kullanıcı id değerine göre image tablosundan verileri getiriyor.
+        $result = kullanici::find(1)->image;
+        //İmage tablosundan tek bir sütun getiriyor.
+        $result = kullanici::find(1)->image->image;
+        
+        $result = Image::find(1)->kullanici;
+        $result = Image::find(1)->kullanici->name;
         
         //Sonuçlar döndürülüyor
         return dd($result);
