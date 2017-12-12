@@ -166,7 +166,7 @@ sayfasını açınız.</em>
 </strong>
 <h3>2.5.1 One To One Relationships</h3>
 <ul>
-    <li>Bu Relationships türünde iki tablo arasında bire bir ilişki kurmamızı sağlar.</li>
+    <li>Bu Relationships türü ile iki tablo arasında bire bir ilişki kurmamızı sağlar.</li>
     <li>
         Örneğin bir image tablosu oluşturalım ve bu tablo üzerinde kullanıcılara ait resim bilgileri tutulsun.
         Her kullanıcı için tek bir resim tutulabiliyor olsun işte bu durumda One To One kuralı geçerlidir.
@@ -178,5 +178,40 @@ sayfasını açınız.</em>
     <li>
         Controller dosyamız içerisindeki örnekler için https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Http/Controllers/newcontroller.php dosyasında
         index methodu içerisinde 52. satırdan itibaren inceleyebilirsiniz.
+    </li>
+</ul>
+<h3>2.5.2 One To Many Relationships</h3>
+<strong>
+    <em>
+        Örneğin: Kullanıcıları tutan ve bu kullanıcılara ait 
+        makaleleri tutan iki tablomuz olsun bir kullanıcının 
+        bir çok makalesi olabilir. Bu sebeple bu iki tablo arasında
+        One To Many ilişkisi vardır.
+    </em>
+</strong>
+<ul>
+    <li>
+        Daha önce kullanıcıları tutan tabloya ait migration ve model dosyalarımı oluşturmuştuk.
+        Şimdi Kullanıcılara ait makale verilerini tutacak olan 
+        makale tablom için model ve migration dosyalarını oluşturmak için terminal ekranına
+        <strong>php artisan make:model Makale -m</strong> kodunu yazalım Makale tablomuz için 
+        Model dosyamız ve migration dosyamız oluştu şimdi migration dosyamızı oluşturmak istediğimiz
+        tablo özelliklerine uygun olarak hazırlayarak <strong>php artisan migrate</strong> kodunu yazalım
+        veritabanına makaleler tablomuz eklendiğini göreceğiz daha sonra Makale model dosyamızı açarak tablo ismimizi tanıtalım.<br>
+        Makale Model Dosyası : https://github.com/ofke-yazilim/laravel-proje/blob/master/app/kullanici.php <br>
+        Makale Migrations Dosyası : https://github.com/ofke-yazilim/laravel-proje/blob/master/database/migrations/2017_12_12_124217_create_makales_table.php
+    <li>
+    <li>
+        Makale Kullanıcı tablom ve Makale tablom arasında kurmuş olduğum one to many relatioships ilişkisinin Model dosylarında nasıl sağlandığını görmek için.
+        https://github.com/ofke-yazilim/laravel-proje/blob/master/app/kullanici.php <br>
+        https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Makale.php dosyalarını inceleyebilirsiniz.
+    <li>
+    <li>
+        Controller dosyamız içerisindeki örnekler için https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Http/Controllers/newcontroller.php dosyasında
+        index methodu içerisinde 64. satırdan itibaren inceleyebilirsiniz.
+    </li>
+    <li>
+        Orm sorguları ile database üzerinde çekilen verinin view üzerine listelenem örneğini https://github.com/ofke-yazilim/laravel-proje/blob/master/resources/views/makaleler.blade.php
+        dosyasını açarak inceleyebilirsiniz.
     </li>
 </ul>
