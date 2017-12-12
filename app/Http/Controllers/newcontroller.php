@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\kullanici;
 use App\Image;
 use App\Makale;
+use App\Urun;
 
 class newcontroller extends Controller
 {
@@ -63,12 +64,18 @@ class newcontroller extends Controller
         //Kullanıcı id değeri 1 olan kişi için makale listesi alınıyor
         $result = kullanici::find(1)->makaleler;
         
-        //id değeri 1 olan makaleyi yazan kullanıcı bilgileri alınıyor.
-        $result = Makale::find(2)->kullanici;
+        if($result){//Eğer kullanıcıya ait makale bulunuyor ise
+            //id değeri 1 olan makaleyi yazan kullanıcı bilgileri alınıyor.
+            $result = Makale::find(1)->kullanici;
+        }
         
         //Almış olduğum makale listesini view içerisine göndereyim
         //makaleler.blade.php içerisinde makalelerimi listeliyorum.
 //        return view("makaleler",compact('result'));
+        
+        //Many To Many İlişkisi
+        $result = kullanici::find(1)->urunler;
+        $result = Urun::find(2)->kullanicilar;
         
         //Sonuçlar döndürülüyor
         return dd($result);
