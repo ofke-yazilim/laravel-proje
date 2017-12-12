@@ -35,4 +35,10 @@ class kullanici extends Model
     protected function makaleler() {
         return $this->hasMany("App\Makale","kullanici_id","id");
     }
+    
+    //Many To Many ilşkisi kullanıyoruz
+    //Urunler tablosu ile ilişki kurduk
+    protected function urunler() {
+        return $this->belongsToMany("App\Urun", "urun_kullanici_baglanti", "kullanici_id");
+    }
 }
