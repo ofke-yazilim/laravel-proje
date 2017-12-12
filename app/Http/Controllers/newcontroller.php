@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 //İşlem yapacağımız model dosyamız tanıtıldı
 use App\kullanici;
 use App\Image;
+use App\Makale;
 
 class newcontroller extends Controller
 {
@@ -50,11 +51,24 @@ class newcontroller extends Controller
         //one to one örneği
         //Kullanıcı id değerine göre image tablosundan verileri getiriyor.
         $result = kullanici::find(1)->image;
-        //İmage tablosundan tek bir sütun getiriyor.
-        $result = kullanici::find(1)->image->image;
+        if($result){//Eğer kullanıcıya ait resim varsa
+            //İmage tablosundan tek bir sütun getiriyor.
+            $result = kullanici::find(1)->image->image;
+
+            $result = Image::find(1)->kullanici;
+            $result = Image::find(1)->kullanici->name;  
+        }
         
-        $result = Image::find(1)->kullanici;
-        $result = Image::find(1)->kullanici->name;
+        //one to many örneği
+        //Kullanıcı id değeri 1 olan kişi için makale listesi alınıyor
+        $result = kullanici::find(1)->makaleler;
+        
+        //id değeri 1 olan makaleyi yazan kullanıcı bilgileri alınıyor.
+        $result = Makale::find(2)->kullanici;
+        
+        //Almış olduğum makale listesini view içerisine göndereyim
+        //makaleler.blade.php içerisinde makalelerimi listeliyorum.
+//        return view("makaleler",compact('result'));
         
         //Sonuçlar döndürülüyor
         return dd($result);
