@@ -215,3 +215,33 @@ sayfasını açınız.</em>
         dosyasını açarak inceleyebilirsiniz.
     </li>
 </ul>
+<h3>2.5.3 Many To Many Relationships</h3>
+<strong>
+    <em>
+        Örneğin : Ürünler tablomuz olsun ürünler tablomuz ve kullanıcı tablomuz arasında ilşki kurarken şöyle bir durum oluşur. Bir ürünü bir çok kullanıcı alabilir aynı zamanda 
+        bir kullanıcı bir çok ürün almış olabilir. İşte bu ilişki sitline Many To Many Relationships adı verilmektedir.
+    </em>
+</strong>
+<ul>
+    <li>
+        Öncelikle Urunler modeli ve urunler tablosunu oluşturmamızı sağlaycak urunler migration dosyası oluşturulur.
+    </li>
+    <li>
+        Elimizde bulunan kullanicilar ve urunler tabloları arasında bağlantı sağlayabilemek için bir bağlantı tablosu oluşturuyoruz.
+        Bu tabloyu oluşturmak için öncelikle özelliklerini girebileceğimiz migration dosyasını oluşturalım <strong>php artisan make:migration kullanici_urunler_baglanti --create=urun_kullanici_baglanti</strong>
+        Oluşturmak istediğimiz <strong>urun_kullanici_baglanti</strong> tablosuna ait sütun özelliklerini migration dosyamızda tanımlayarak (tanımladığımız sütun özellikleri ise 
+        ürün id değerini tutan urun_id ve kullanıcı id değerini tutan kullanici_id) <strong>php artisan migrate</strong> yazıyor ve tablomuzu oluşturuyoruz.
+        yazarak tablomuzu database içerisinde oluşturuyoruz.
+    </li>
+    <li>
+        Artık kullanıcılar ürün aldıklarında aldıkları bu ürüne ait urun_id ve kullanıcıya ait kullanici_id değerleri birlikte bu bağlantı tablosuna eklenmeli.
+    </li>
+    <li>
+        Many To Many Relationships ilişkisinin Model dosyları üzerinde nasıl kullanıldığını görmek için https://github.com/ofke-yazilim/laravel-proje/blob/master/app/kullanici.php ve 
+        https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Urun.php dosyalarını inceleyebilirsiniz.
+    </li>
+    <li>
+        Controller dosyamız içerisindeki örnekler için https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Http/Controllers/newcontroller.php dosyasında
+        index methodu içerisinde 76. satırdan itibaren inceleyebilirsiniz.
+    </li>
+</ul>
