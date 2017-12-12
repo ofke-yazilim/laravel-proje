@@ -1,4 +1,4 @@
-# laravel-proje Wamp 3.1.0 Local Windows
+# laravel-proje Wamp 3.1.0 Local Windows Projesi
 
 Laravel 5.6 Wamp Server
 <h1>1 - LARAVEL KURULUMU VE WİNDOWS SANAL SUNUCU OLUŞTURULMASI</h1>
