@@ -29,4 +29,10 @@ class kullanici extends Model
     protected function image(){
         return $this->hasOne("App\Image", "kullanici_id" , "id");
     }
+    
+    //One to Many ilişki kullanıyoruz
+    //Makele tablosuna bağlantı kuraqcapız
+    protected function makaleler() {
+        return $this->hasMany("App\Makale","kullanici_id","id");
+    }
 }
