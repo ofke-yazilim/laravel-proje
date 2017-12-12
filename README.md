@@ -200,12 +200,12 @@ sayfasını açınız.</em>
         veritabanına makaleler tablomuz eklendiğini göreceğiz daha sonra Makale model dosyamızı açarak tablo ismimizi tanıtalım.<br>
         Makale Model Dosyası : https://github.com/ofke-yazilim/laravel-proje/blob/master/app/kullanici.php <br>
         Makale Migrations Dosyası : https://github.com/ofke-yazilim/laravel-proje/blob/master/database/migrations/2017_12_12_124217_create_makales_table.php
-    <li>
+    </li>
     <li>
         Makale Kullanıcı tablom ve Makale tablom arasında kurmuş olduğum one to many relatioships ilişkisinin Model dosylarında nasıl sağlandığını görmek için.
         https://github.com/ofke-yazilim/laravel-proje/blob/master/app/kullanici.php <br>
         https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Makale.php dosyalarını inceleyebilirsiniz.
-    <li>
+    </li>
     <li>
         Controller dosyamız içerisindeki örnekler için https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Http/Controllers/newcontroller.php dosyasında
         index methodu içerisinde 64. satırdan itibaren inceleyebilirsiniz.
