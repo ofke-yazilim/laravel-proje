@@ -252,7 +252,9 @@ sayfasını açınız.</em>
         verilere ulaşmamızı sağlayan ilişki türüne Has Many Through denir. Örneğin elimizde image,kullanici ve 
         makale tabloları mevcut olsun makaleyi yazan kullanıcının image blgisine ulaşabilmek için, image ve makale 
         tabloları arasında kullanıcı tablosunu bağlantı tablosu olarak kullanırız  işte bu ilişki yöntemi has many through
-        diye adlandırılır.    
+        diye adlandırılır. Bu örnekte makale tablosu içerisinde bulunanan kullanici_id ile kullanici tablosunda bulunanan
+        id değeri eşleştirilir. Daha sonra Kullanici tablosu üzerinde bulunan image_id değeri ile image tablosunda bulunan
+        id değeri eşleştirilerek sonuçlar alınır.   
     </em>
 </strong>
 <ul>
