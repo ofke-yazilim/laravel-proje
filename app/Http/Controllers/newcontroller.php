@@ -63,8 +63,7 @@ class newcontroller extends Controller
         //one to many örneği
         //Kullanıcı id değeri 1 olan kişi için makale listesi alınıyor
         $result = kullanici::find(1)->makaleler;
-        
-        if($result){//Eğer kullanıcıya ait makale bulunuyor ise
+        if($result!="[]"){//Eğer kullanıcıya ait makale bulunuyor ise
             //id değeri 1 olan makaleyi yazan kullanıcı bilgileri alınıyor.
             $result = Makale::find(1)->kullanici;
         }
@@ -75,8 +74,12 @@ class newcontroller extends Controller
         
         //Many To Many İlişkisi
         $result = kullanici::find(1)->urunler;
-        $result = Urun::find(2)->kullanicilar;
+        $result = Urun::find(1)->kullanicilar;
         
+        //Has Many Through İlişkisi
+        //1 idli makaleyi yazan kişinin resim bilgileri alınıyor.
+        $result = Makale::find(1)->kullanciResimler;
+
         //Sonuçlar döndürülüyor
         return dd($result);
     }
