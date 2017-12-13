@@ -17,6 +17,8 @@ class KullaniciUrunlerBaglanti extends Migration
             $table->increments('id');
             $table->integer('kullanici_id');
             $table->integer('urun_id');
+            $table->string('kargo')->nullable();
+            $table->timestamps();
         });
     }
 
