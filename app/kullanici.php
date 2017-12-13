@@ -39,6 +39,7 @@ class kullanici extends Model
     //Many To Many ilşkisi kullanıyoruz
     //Urunler tablosu ile ilişki kurduk
     protected function urunler() {
-        return $this->belongsToMany("App\Urun", "urun_kullanici_baglanti", "kullanici_id");
+        return $this->belongsToMany("App\Urun", "urun_kullanici_baglanti", "kullanici_id")
+            ->withTimestamps()->withPivot('kargo');
     }
 }
