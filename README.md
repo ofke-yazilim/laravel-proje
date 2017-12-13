@@ -245,3 +245,23 @@ sayfasını açınız.</em>
         index methodu içerisinde 76. satırdan itibaren inceleyebilirsiniz.
     </li>
 </ul>
+<h3>2.5.3 Has Many Through Relationships</h3>
+<strong>
+    <em>
+        Elimizde üç tablomuz bulunsun bu üç tablodan birini bağlantı tablosu gibi kullanarak diğer tablolardaki 
+        verilere ulaşmamızı sağlayan ilişki türüne Has Many Through denir. Örneğin elimizde image,kullanici ve 
+        makale tabloları mevcut olsun makaleyi yazan kullanıcının image blgisine ulaşabilmek için, image ve makale 
+        tabloları arasında kullanıcı tablosunu bağlantı tablosu olarak kullanırız  işte bu ilişki yöntemi has many through
+        diye adlandırılır.    
+    </em>
+</strong>
+<ul>
+    <li>
+        Model dosyası üzerinde örnek kullanım için https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Makale.php dosyasını
+        inceleyebilirsiniz.
+    </li>
+    <li>
+        Controller dosyası üzerinde kullanımı için https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Http/Controllers/newcontroller.php dosyasını
+        81. satırı inceleyebilirsiniz.
+    </li>
+</ul>
