@@ -8,6 +8,7 @@ use App\kullanici;
 use App\Image;
 use App\Makale;
 use App\Urun;
+use App\Resim;
 
 class newcontroller extends Controller
 {
@@ -79,6 +80,10 @@ class newcontroller extends Controller
         //Has Many Through İlişkisi
         //1 idli makaleyi yazan kişinin resim bilgileri alınıyor.
         $result = Makale::find(1)->kullanciResimler;
+        
+        //One to Many Polimorphic Relatioships örneği
+        $result = Makale::find(1)->MakaleResimler;
+        $result = Resim::find(1)->image;
 
         //Sonuçlar döndürülüyor
         return dd($result);
