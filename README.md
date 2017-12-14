@@ -267,3 +267,45 @@ sayfasını açınız.</em>
         81. satırı inceleyebilirsiniz.
     </li>
 </ul>
+
+<h2>2.6 Eloquent: Polymorphic Relationships Kullanımı</h2>
+<strong>
+    <em>
+        Polymorphic İlişkinin ne olduğunu şöyle bir örnek ile açıklayabilirim: Bizim Makale ve Urun tablolarımız olduğunu düşünelim.
+        Makale ve ürünlerimize ait resimleri tek bir tablo içerisinde tuttuğumuzu ve bu tablonun isminin ise resimler tablosu olduğunu varsayalım.
+        Resimler tablosu ile Makale ve Urun tabloları arasında olab bu ilişki türüne Polymorphic ilişki denir.
+    </em> 
+</strong>
+Ayrıntılı İncelemek İçin : https://laravel.com/docs/5.5/eloquent-relationships#polymorphic-relations
+<br>
+<br>
+<h2>2.6.1 One To Many Polymorphic Relationships Kullanımı</h2>
+<ul>
+    <li>
+        Önce Makale ve ürün resimlerinin tutulacağı tabloyu ve Orm işlemlerimizi yapacağımız Model dosyamızı oluşturalım. 
+        Tablomuzun sütun özelliklerini tanımlayacağımız Migration dosyamızı ve Orm işlemleri için kullnacağımız model dosyamızı 
+        oluşturmak için terminal ekranımıza <strong>php artisan make:model Resim -m</strong> kodunu yazıyoruz.
+    </li>
+    <li>
+        Resimler için oluşturmuş olduğumuz Migration dosyasını açarak sütun özelliklerini tanımlıyoruz. Bu tabloda Polymorphic ilişki için iki önemli 
+        sütun tanımlamalıyız bu sütunlardan biri <em>{Senin Belirleyeceğin Bir Değer}_id ve {Senin Belirleyeceğin Bir Değer}_type</em> şeklinde olmalıdır(Örnek : image_id,image_type). 
+        Diğer sütunları istediğin gibi ayarlayabilirsin.<br>
+        Örnek Kullanım : https://github.com/ofke-yazilim/laravel-proje/blob/master/database/migrations/2017_12_14_063050_create_resims_table.php
+    </li>
+    <li>
+        Örnek kullanımdan da gördüğünüz şekilde tanımlamalar yapıldıktan sonra <strong>php artisan migrate</strong> 
+        yazılarak database üzerinde <em>resimler</em> tablomuz oluşturulur.
+    </li>
+    <li>
+        Resimler Tablomuz üzerinde database işlmelerini sağlaycak olan Resim Adındaki model dosyamız açılarak resimler tablosu model dosyamıza tanıtılır.<br>
+        Model Dosyası : https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Resim.php
+    </li>
+    <li>
+        Resimler tablomuzdan örneğin Makalelerimize ait resimleri alabilmek için kurmuş olduğumuz Polymorphic Bağlantı örneği için https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Resim.php
+        adresi üzerindeki model dosyamızı inceleyebilirsiniz.
+    </li>
+    <li>
+        One To Many Polomorfik İlişkisi için Controller dosyası üzerinde yapılan örneği : https://github.com/ofke-yazilim/laravel-proje/blob/master/app/Http/Controllers/newcontroller.php
+        dosyası 85. satırdan itibaren inceleyebilirsin.
+    </li>
+</ul>
