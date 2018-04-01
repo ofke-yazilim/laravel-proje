@@ -1,0 +1,34 @@
+	  $mail = new PHPMailer\PHPMailer(true);
+    try{
+      $mail->isSMTP();
+      $mail->CharSet = 'utf-8';
+      $mail->SMTPAuth =true;
+
+      if($settings['mail_secure']){
+          $mail->SMTPSecure = $settings['mail_secure'];
+      } else{
+         $mail->SMTPAutoTLS = false; 
+      }
+		
+      $mail->Host = $settings['mail_server']; //gmail has host > smtp.gmail.com
+      $mail->Port = $settings['mail_port']; //gmail has port > 587 . without double quotes
+      $mail->Username = $settings['mail_user']; //your username. actually your email
+      $mail->Password = $settings['mail_password']; // your password. your mail password
+      $mail->setFrom($settings['mail_user'], $settings['site_name']); 
+      $mail->Subject = $settings['site_desc'];
+      $mail->MsgHTML($message);
+      $mail->addAddress("sent@gmail.com" ,"Gönderilen Kişi Adı"); 
+      $mail->send();
+	    }catch(phpmailerException $e){
+		    //dd($e);
+	    }catch(Exception $e){
+		    //dd($e);
+	    }
+      if($mail){
+        $mr = "Mail İletildi";
+        $mt = "success";
+      }else{
+        //return View("result")->with("result","failed")->with("title","Failed");
+        $mt = "danger";
+        $mr = "Mail İletilirken Hata Oluştu";
+	    }
