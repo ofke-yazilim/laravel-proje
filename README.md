@@ -309,3 +309,13 @@ Ayrıntılı İncelemek İçin : https://laravel.com/docs/5.5/eloquent-relations
         dosyası 85. satırdan itibaren inceleyebilirsin.
     </li>
 </ul>
+<h2>2.6.1.1 Laravel 5.4 PHPMailler Kurulum ve Kullanımı</h2>
+<ul>
+  <li>
+    Öncelikle terminal ekranında projemizin bulunduğu dosya dizini içerisinde  <strong>composer require phpmailer/phpmailer</strong>kodunu çalıştırıyoruz. Composer kullanarak phpmailler sınıfını projemize dahil etmiş olduk.
+  </li>
+  <li>
+    Daha sonra Mail gönderimi yapcağımız controller dosyası içerisinde en üst kısma <strong>use PHPMailer\PHPMailer;</strong> yazarak projemize PHPMailler sınıfını dahil ediyoruz.
+  </li>
+</ul>
+
