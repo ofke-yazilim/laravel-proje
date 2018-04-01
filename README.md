@@ -317,5 +317,8 @@ Ayrıntılı İncelemek İçin : https://laravel.com/docs/5.5/eloquent-relations
   <li>
     Daha sonra Mail gönderimi yapcağımız controller dosyası içerisinde en üst kısma <strong>use PHPMailer\PHPMailer;</strong> yazarak projemize PHPMailler sınıfını dahil ediyoruz.
   </li>
+  <li>
+    Örnek Gönderim kodları için : <a href="" target="_blank">https://github.com/ofke-yazilim/laravel-proje/blob/master/phpmailler.txt</a> adresini inceleyebilirsiniz.
+  </li>
 </ul>
 
