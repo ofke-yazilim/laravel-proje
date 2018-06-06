@@ -309,7 +309,7 @@ Ayrıntılı İncelemek İçin : https://laravel.com/docs/5.5/eloquent-relations
         dosyası 85. satırdan itibaren inceleyebilirsin.
     </li>
 </ul>
-<h2>2.6.1.1 Laravel 5.4 PHPMailler Kurulum ve Kullanımı</h2>
+<h2>2.7 Laravel 5.4 PHPMailler Kurulum ve Kullanımı</h2>
 <ul>
   <li>
     Öncelikle terminal ekranında projemizin bulunduğu dosya dizini içerisinde  <strong>composer require phpmailer/phpmailer</strong>kodunu çalıştırıyoruz. Composer kullanarak phpmailler sınıfını projemize dahil etmiş olduk.
@@ -320,5 +320,23 @@ Ayrıntılı İncelemek İçin : https://laravel.com/docs/5.5/eloquent-relations
   <li>
     Örnek Gönderim kodları için : <a href="https://github.com/ofke-yazilim/laravel-proje/blob/master/phpmailler.txt" target="_blank">https://github.com/ofke-yazilim/laravel-proje/blob/master/phpmailler.txt</a> adresini inceleyebilirsiniz.
   </li>
+</ul>
+<h2>2.8 Laravel 5.4 Middleware Kullanımı</h2>
+<ul>
+  <li>
+    Middleware yapısını ara katman olarak düşünebiliriz. Sayfa üzerinde işlemler yapmadan önce gerçekleştireceğimiz işlemler için kullanabiliriz. Örneğin Kullanıcı girişi yapılmış mı ya da kullanıcının ilgili sayfaya erişmeye izni var mı gibi kontroller sağlayabiliriz. Fakat ben kullanıcıların girdiği ilgili sayfa üzerinde log bilgisinin alınması işlemini gerçekledim.
+  </li>
+  <li>
+   Öncelikle Log kayıtlarımı tutabileceğim bir model ve migration oluşturuyorum. Projemin bulunduğu ilgili dizinde <strong>php artisan make:model Log -m</strong> kodunu çalıştırarak Log Adında bir model sınıfı ve logs adında tablomu oluşturacağım migration dosyam oluşmuş oldu. Migration dosyamı açarak sütun tanımlarımı yapıyorum ardından <strong>php artisan migrate</strong> kodunu çalıştırarak ilgili log tablosunu oluşturuyorum. 
+  </li>
+  <li>
+    Log Model sınıfını açarak kayıt işlemlerini yapacağım static fonksiyonumu tanımlıyorum.
+  </li>
+  <li>
+   Ardından Middleware oluşturmak için <strong>php artisan make:middleware LogActivity</strong> yazarak LogActivity adında bir     middleware oluşturuyorum middleware dosyasını açarak handle fonksiyonu içerisinde dilediğim işlemleri gerçekleyebiliyorum.
+  </li>
+  <li>
+   Son olarak app klasörü içerisinde kernel.php dosyasını açarak $middleware içerisine <strong>'LogActivity' => \App\Http\Middleware\LogActivity::class,</strong> şeklinde middlewaretanımlamamızı yapıyoruz. Artık middleware kullanılmaya hazır.
+   </li>
 </ul>
 
