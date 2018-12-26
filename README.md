@@ -339,4 +339,8 @@ Ayrıntılı İncelemek İçin : https://laravel.com/docs/5.5/eloquent-relations
    Son olarak app klasörü içerisinde kernel.php dosyasını açarak $middleware içerisine <strong>'LogActivity' => \App\Http\Middleware\LogActivity::class,</strong> şeklinde middlewaretanımlamamızı yapıyoruz. Artık middleware kullanılmaya hazır.
    </li>
 </ul>
+<h2>Composer Kullanarak Yükleme Yapılamaz ise</h2>
+<pre style="box-sizing:border-box;font-family:SFMono-Regular,Consolas,&quot;Liberation Mono&quot;,Menlo,Courier,monospace;font-size:11.9px;margin-bottom:16px;margin-top:0px;background-color:rgb(246,248,250);border-radius:3px;line-height:1.45;overflow:auto;padding:16px;color:rgb(36,41,46)"><code style="box-sizing:border-box;font-family:SFMono-Regular,Consolas,&quot;Liberation Mono&quot;,Menlo,Courier,monospace;background:initial;border-radius:3px;margin:0px;padding:0px;border:0px;word-break:normal;display:inline;line-height:inherit;overflow:visible">rm -rf vendor/ composer.lock
+composer install --no-dev
+composer update --no-dev</code></pre>
 
